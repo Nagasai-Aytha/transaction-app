@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { TransactionFormComponent } from './transaction-form.component';
 
 describe('TransactionFormComponent', () => {
@@ -8,10 +8,10 @@ describe('TransactionFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TransactionFormComponent ],
-      imports: [ FormsModule ] 
+      declarations: [TransactionFormComponent],
+      imports: [FormsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,5 +29,5 @@ describe('TransactionFormComponent', () => {
     fixture.detectChanges();
     const submitEl = fixture.debugElement.nativeElement;
     expect(submitEl.querySelector('button').disabled).toBeTruthy();
-   });
+  });
 });

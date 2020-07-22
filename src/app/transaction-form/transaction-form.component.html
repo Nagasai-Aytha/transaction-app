@@ -11,7 +11,7 @@
                 <form (ngSubmit)="onSubmit(formdemo, transaction)" #formdemo="ngForm">
                     <div>
                         <label>FROM ACCOUNT</label>
-                        <input id="from" [(ngModel)]="transaction.from" [value]="transaction.from" name="from" required disabled>
+                        <input *ngIf="!submitted" id="from" [(ngModel)]="transaction.from" [value]="transaction.from" name="from" required disabled>
                         <div *ngIf="submitted">{{transaction.from}}</div>
                     </div>
 
@@ -29,7 +29,7 @@
 
                     <div>
                         <button mat-button type="button" [disabled]="!formdemo.valid" (click)="validateBalance()" *ngIf="!submitted">Submit</button>
-                        <button mat-button type="submit" [disabled]="!formdemo.valid" *ngIf="submitted">Transfer</button>
+                        <button mat-button type="submit" *ngIf="submitted && errorMessage === ''">Transfer</button>
 
                     </div>
                 </form>
