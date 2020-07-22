@@ -28,6 +28,7 @@ describe('TransactionFormComponent', () => {
     const fixture = TestBed.createComponent(TransactionFormComponent);
     fixture.detectChanges();
     const submitEl = fixture.debugElement.nativeElement;
-    expect(submitEl.querySelector('button').disabled).toBeTruthy();
+    console.log(submitEl)
+    expect(submitEl.querySelector('#from').disabled).toBeTruthy();
   });
 });
