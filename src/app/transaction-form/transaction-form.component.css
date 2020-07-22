@@ -1,0 +1,164 @@
+.container{
+    display:flex;
+    flex-flow: row wrap;
+    width:100%;
+  }
+  .transactionForm{
+    order: 1;
+    width:30%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .history{
+    order: 2;
+    width:65%;
+  }
+  .transactionForm mat-card{
+     width:70%;
+  }
+
+  ::ng-deep .mat-card-header{
+    background-color:#0b97a1 !important;
+    padding:5px !important;
+  }
+
+  ::ng-deep .mat-card-header .mat-card-header-text{
+    width: 100%;
+  }
+
+  ::ng-deep .mat-card-header .mat-card-header-text .mat-card-title div{
+    display: inline-block;
+    width: 90%;
+  }
+
+  .mat-card{
+     background: none;
+     box-shadow: none;
+  }
+
+  .mat-card-content{
+    background: white;
+    color: black;
+    padding: 10px;
+  }
+
+  .mat-form-field-label {
+    color: black !important;
+  }
+
+  img{
+    width: 20px;
+    height: 20px;
+}
+
+.mat-table, form{
+    background: white !important;
+
+}
+
+.mat-table tbody tr {
+    border: 1px solid black;
+}
+
+td{
+    text-align: center;
+    padding: 5px;
+    color: black !important;
+}
+
+th{
+    display:none;
+}
+
+
+mat-form-field, table{
+    width: 100%;
+}
+
+
+mat-label{
+    color: black;
+}
+
+
+.mat-button{
+    background:#fc7f03 !important;
+    color: white !important;
+    width: 60%;
+}
+
+form div{
+    padding: 15px;
+}
+
+form div label { 
+    display: block; 
+    font-weight: bold;
+}
+form div input{
+    width:90%;
+}
+
+input{
+  width:50%;
+  border:none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.tableOptions input, span{
+  padding-right: 15px;
+}
+
+.merchant p:first-child, .tableOptions span, .mat-column-amount{
+  font-weight: bold;
+}
+
+.merchant{
+  text-align: left;
+}
+
+.mat-cell{
+  font-size: 12px;
+  padding:0px;
+}
+
+.mat-header-row, .mat-row {
+  height: 32px !important
+}
+
+
+form div:last-child{
+    display: flex; 
+    justify-content: flex-end
+}
+
+mat-card-title div{
+    text-align: center;
+}
+
+table {
+  border: 1px solid black !important;
+  font-size: 12px;
+}
+
+.error{
+  color:red;
+}
+
+
+@media (max-width:760px) {
+  .container {
+    flex-direction: column;
+  }
+  .transactionForm, .history{
+    width:100%;
+  }
+  .tableOptions input{
+    width:90%;
+  }
+}
+
+
+  
+  

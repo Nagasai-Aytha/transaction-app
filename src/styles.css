@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { 
+    background: url(assets/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Kanit';
+    font: 14px;
+  }
+
+  .logo{
+      height: 8%;
+      min-width: 100%;
+      background: white;
+      position: absolute;
+      top: 0px;
+      left:0px;
+      display:flex;
+      align-items: center;
+  }
+
+  .logo img{
+     height:60%;
+     position: relative;
+     left: 10%;
+  }
+
+  .main{
+     position: absolute;
+     top: 15%; 
+  }
+  
+
+
