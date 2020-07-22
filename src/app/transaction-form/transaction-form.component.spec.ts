@@ -8,7 +8,8 @@ describe('TransactionFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TransactionFormComponent ]
+      declarations: [ TransactionFormComponent ],
+      imports: [ FormsModule ] 
     })
     .compileComponents();
   }));
