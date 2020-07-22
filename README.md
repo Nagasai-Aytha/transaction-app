@@ -7,6 +7,19 @@ Jasmine and Karma for unit testing
 Uploaded these code changes to my github account
 Deployed to github pages 
 
+Project Structure:
+
+As single page application with column layout used only component - transaction-form
+To avoid CSS frameworks and to make this one page simple , used only in component.css files and for global styles- style.css
+One Service- transaction.service.ts for mocking given API response
+Unit Testing using Jasmine and Karma
+All icons, iamges and defaults messages are handled for Constants.ts file
+
+Deployed these changes to Github pages and uploaded same to my github for reference
+
+URL - https://nagasai-aytha.github.io/transaction-app/
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
