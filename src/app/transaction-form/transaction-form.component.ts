@@ -26,9 +26,9 @@ export class TransactionFormComponent {
   submitted = false;
   balance: number = 0;
   placeholder: string = '';
-  errorMessage:string = '';
+  errorMessage: string = '';
 
-  constructor(public transactionService: TransactionService) {}
+  constructor(public transactionService: TransactionService) { }
 
   ngOnInit() {
     this.transactionService.getTransactions().subscribe((res: any) => {
@@ -38,35 +38,36 @@ export class TransactionFormComponent {
     this.balance = CONSTANTS.AMOUNT;
     this.transaction.from = CONSTANTS.FROM + ' - $' + this.balance;
 
-    this.dataSource.filterPredicate = function(data, filter: string): boolean {
+    this.dataSource.filterPredicate = function (data, filter: string): boolean {
       return data.merchant.toLowerCase().includes(filter) || data.transactionType.toString() === filter;
     };
   }
 
 
-  validateBalance(){
+  validateBalance() {
     this.submitted = true;
-    let bal = this.balance - this.transaction.amount;
-    console.log(bal);
-    if(bal < -500){
-       this.errorMessage = CONSTANTS.MESSAGE;
-       this.submitted = false;
-    } else{
+    this.balance = this.balance - this.transaction.amount;
+    if (this.balance < -500) {
+      this.errorMessage = CONSTANTS.MESSAGE;
+      this.submitted = false;
+    } else {
       this.errorMessage = '';
     }
   }
   onSubmit(form, formData) {
     console.log('submitted formdata', form, formData);
     formData.transactionDate = this.currentDate;
-    this.balance = this.balance - formData.amount;
+    //this.balance = this.balance - formData.amount;
     this.dataSource.data.unshift({ ...formData });
     this.dataSource = new MatTableDataSource<any>(this.dataSource.data);
-    form.reset({from : CONSTANTS.FROM + ' - $' + this.balance});
+    form.reset();
+    this.transaction.from = CONSTANTS.FROM + ' - $' + this.balance;
+    this.transaction.merchant = '';
+    this.transaction.amount = null;
     this.submitted = false;
   }
 
   doFilter = (value: any) => {
-    console.log(value.trim().toLocaleLowerCase())
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
